@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        #message {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        #yesButton, #noButton {
+            padding: 10px 20px;
+            font-size: 18px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        #noButton {
+            transition: font-size 0.5s;
+        }
+
+        #catImages {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .catImage {
+            width: 200px;
+            height: auto;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        #hiddenImage {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="message">Will you be my Valentine, pookie?</div>
+
+    <button id="yesButton" onclick="displayResponse('Yes')">Yes</button>
+    <button id="noButton" onclick="displayResponse('No')">No</button>
+
+    <div id="catImages">
+        <img class="catImage" id="sillyCat" src="https://cdn3.emoji.gg/emojis/8426-cat.png" alt="Silly Cat 1">
+        <img class="catImage" id="hiddenImage" src="https://www.meme-arsenal.com/memes/1dc14f5d89083b956f2501cc92e3f3fb.jpg" alt="Silly Cat 2">
+        <!-- Add more cat images as needed -->
+    </div>
+
+    <script>
+       function displayResponse(response) {
+            if (response === 'Yes') {
+                document.getElementById('sillyCat').src = "https://www.meme-arsenal.com/memes/1dc14f5d89083b956f2501cc92e3f3fb.jpg";
+                document.getElementById('hiddenImage').style.display = 'block';
+                document.getElementById('message').innerText = "Yaaaay!!! Luv u my babygirl";
+            } else {
+                document.getElementById('noButton').style.fontSize = (parseFloat(window.getComputedStyle(document.getElementById('noButton')).fontSize) * 0.9) + 'px';
+            }
+        }
+    </script>
+</body>
+</html>
